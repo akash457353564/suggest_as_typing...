@@ -1,0 +1,23 @@
+{
+  "name": "suggest_as_typing...",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash457353564/suggest_as_typing....git"
+  },
+  "author": "akash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash457353564/suggest_as_typing.../issues"
+  },
+  "homepage": "https://github.com/akash457353564/suggest_as_typing...#readme",
+  "dependencies": {
+    "parcel": "^2.9.2"
+  }
+}
