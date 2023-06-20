@@ -644,7 +644,6 @@ document
   );
 */ //////////////////USING FETCH API/////////////////////////////////
 const suggestion = async function() {
-    city_wrapper.innerHTML = "";
     const res = await fetch(`https://search.betterhalf.ai/search/city?charlist=${search_box.value}`);
     const data = await res.json();
     const loaction_array = data.result;
@@ -653,7 +652,6 @@ const suggestion = async function() {
         console.log(location.city, location.country);
         suggestion_wrapper.insertAdjacentHTML("beforeend", `<div class="city_wrapper"><div class="suggestion_txt">${location.city}, ${location.country}</div></div>`);
     });
-    city_wrapper.innerHTML = "";
 };
 search_box.addEventListener("input", ()=>{
     suggestion();
