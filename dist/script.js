@@ -644,17 +644,25 @@ document
   );
 */ //////////////////USING FETCH API/////////////////////////////////
 const suggestion = async function() {
+    suggestion_wrapper.innerHTML = "";
     const res = await fetch(`https://search.betterhalf.ai/search/city?charlist=${search_box.value}`);
     const data = await res.json();
     const loaction_array = data.result;
     suggestion_wrapper.classList.add("borders");
     loaction_array.forEach((location)=>{
-        console.log(location.city, location.country);
         suggestion_wrapper.insertAdjacentHTML("beforeend", `<div class="city_wrapper"><div class="suggestion_txt">${location.city}, ${location.country}</div></div>`);
+        document.querySelector(".city_wrapper").addEventListener("click", ()=>{
+            search_box.value = document.querySelector(".city_wrapper").textContent;
+            suggestion_wrapper.innerHTML = "";
+            suggestion_wrapper.classList.remove("borders");
+        });
     });
 };
 search_box.addEventListener("input", ()=>{
     suggestion();
+});
+search_box.addEventListener("focusout", ()=>{
+    if (!suggestion_wrapper.innerHTML) suggestion_wrapper.classList.remove("borders");
 });
 
 },{}]},["gAoaA","6rimH"], "6rimH", "parcelRequiree962")
